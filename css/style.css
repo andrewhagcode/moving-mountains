@@ -416,3 +416,8 @@ em{font-style:italic}
 /* thin accent line under each section's lead-in on dark sections */
 .sec .bar{width:96px}
 .sec .h2+.sub::after{content:"";display:block;width:24px;height:1px;margin-top:0;background:transparent}
+
+
+/* phone fixes */
+@media (max-width:1220px){.main-nav .menu-close{position:absolute;top:14px;right:18px}}
+@media (max-width:640px){.g-item.tall{grid-row:span 1}}
