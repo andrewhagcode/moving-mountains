@@ -421,3 +421,16 @@ em{font-style:italic}
 /* phone fixes */
 @media (max-width:1220px){.main-nav .menu-close{position:absolute;top:14px;right:18px}}
 @media (max-width:640px){.g-item.tall{grid-row:span 1}}
+
+/* more videos */
+.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px;margin-top:48px}
+.vthumb{margin:0}
+.yt{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.35)}
+.yt img,.yt iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.yt img{transition:transform 1s cubic-bezier(.2,.8,.2,1),filter .5s;filter:saturate(.9) brightness(.85)}
+.yt:hover img,.yt:focus-visible img{transform:scale(1.04);filter:none}
+.yt .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.45);transition:background .3s,transform .3s}
+.yt .play::after{content:"";position:absolute;left:25px;top:19px;border-left:20px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent}
+.yt:hover .play{background:rgba(0,0,0,.7);transform:scale(1.06)}
+.vthumb figcaption{margin-top:12px;font:700 13px/1.4 'Space Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--cream)}
+@media (max-width:640px){.video-grid{grid-template-columns:minmax(0,1fr)}}

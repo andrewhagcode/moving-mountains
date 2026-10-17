@@ -119,6 +119,23 @@
     if (bandSec && cards.length) bandIO.observe(bandSec);
   }
 
+
+  /* ---------- YouTube thumbnails: load the player only when clicked ---------- */
+  document.querySelectorAll('.yt[data-yt]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + a.getAttribute('data-yt') + '?autoplay=1&rel=0';
+      f.title = a.getAttribute('aria-label') || 'YouTube video';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen = true;
+      var holder = document.createElement('div');
+      holder.className = 'yt';
+      holder.appendChild(f);
+      a.replaceWith(holder);
+    });
+  });
+
   /* ---------- lightbox (no hash jumps when JS is on) ---------- */
   var boxes = Array.prototype.slice.call(document.querySelectorAll('.lb'));
   var current = -1, lastFocus = null;
