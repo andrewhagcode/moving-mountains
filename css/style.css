@@ -434,3 +434,18 @@ em{font-style:italic}
 .yt:hover .play{background:rgba(0,0,0,.7);transform:scale(1.06)}
 .vthumb figcaption{margin-top:12px;font:700 13px/1.4 'Space Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--cream)}
 @media (max-width:640px){.video-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* v26: album cover by the track list + stained glass logo under the porch photo */
+.album{display:grid;grid-template-columns:clamp(150px,15vw,210px) 1fr;gap:clamp(20px,2.4vw,32px);align-items:center;margin-top:4px}
+.album .lead{margin:0}
+.album-cover{display:block;border:1px solid rgba(255,255,255,.45);padding:6px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.album-cover:hover{transform:translateY(-3px)}
+.album-cover img{display:block;width:100%;height:auto;aspect-ratio:900/872;object-fit:cover}
+.glass-logo{display:block;width:62%;max-width:320px;height:auto;margin:92px auto 0;border:1px solid rgba(255,255,255,.45);padding:6px;background:#0A0A0A}
+@media (max-width:760px){
+  .album{grid-template-columns:120px 1fr;gap:18px}
+  .glass-logo{width:58%;margin-top:84px}
+}
+.about-photo{position:relative;top:auto}
+.photo-wrap{position:relative}
+.glass-logo{margin-top:72px}
